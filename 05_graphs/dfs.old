@@ -1,0 +1,46 @@
+def read():
+    n, m = [int(i) for i in input().split()]
+    V = {i: [] for i in range(1, n + 1)} # graph as a dict
+    while (m >= 1):
+       key, val = [int(i) for i in input().split()]
+       V[key].append(val)
+       m -= 1
+    #u, v = [int(i) for i in input().split()]
+    return reorganize(V) #, u, v
+
+def reorganize(G):
+    """Reorganize graph into adjacency-list"""
+    for k in G:
+        for v in G[k]:
+            if (k not in G[v]):
+                G[v].append(k)
+    return G
+    
+
+def explore(G, visited, v, cc, ccnum):
+    """Return dict of which nodes are reachable from the given node"""
+    cc[v] = ccnum # connected components
+    visited[v] = True
+    for u in G[v]:
+        if (visited[u] == False):
+            explore(G, visited, u, cc, ccnum)
+
+def DFS(G):
+    visited = {}
+    cc = {}
+    ccnum = 0
+    for v in G.keys():
+        visited[v] = False
+    for v in G.keys():
+        if (visited[v] == False):
+            explore(G, visited, v, cc, ccnum)
+        ccnum = cc[v] + 1
+    return cc, ccnum
+
+def launch():
+    G = read()
+    cc, ccnum = DFS(G)
+    print(str(ccnum))
+
+
+launch()

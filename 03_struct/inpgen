@@ -1,0 +1,47 @@
+#!/usr/local/bin/python3
+
+import sys
+from random import randint, choice
+
+def usage():
+    print("usage: inpgen N outfile")
+    print("N - number of operations")
+    print("outfile - file name to write into")
+
+def generate(N, out):
+    if (N >= int(10e5)):
+        N = int(10e5) - 1
+    f = open(out, 'w+')
+    f.write(str(N) + '\n')
+    operators = ["Insert", "Extract"]
+    counter = 1
+    for op in range(N + 1):
+        """
+        if ((counter % 10) == 0):
+            line = operators[1]
+        else:
+            line = operators[0] + " " + str(randint(1, (int(10e9) - 1)))
+        if (op != (N - 1)):
+            line += "\n"
+        """
+        command = choice(operators)
+        if (command == "Insert"):
+            line = command  + " " + str(randint(1, (int(10e9) - 1)))
+        else:
+            line = operators[1]
+        if (op != (N - 1)):
+            line += "\n"
+        f.write(line)
+        counter += 1
+    f.close()
+    print("File {0} successfuly generated!".format(out))
+
+if __name__ == "__main__":
+    args = sys.argv[1:]
+    if (len(args) == 0):
+        usage()
+    else:
+        N = int(args[0])
+        out = args[1]
+        generate(N, out)
+    

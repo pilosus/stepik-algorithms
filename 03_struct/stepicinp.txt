@@ -1,0 +1,101 @@
+100
+Insert 543256
+Extract
+Insert 124
+Insert 9
+Insert 512
+Insert 1
+Insert 10000
+Insert 5
+Insert 1000000
+Extract
+Insert 8
+Insert 760
+Insert 4322
+Insert 98
+Insert 200
+Extract
+Insert 3
+Insert 354
+Insert 79
+Extract
+Insert 5432561
+Extract
+Insert 1245
+Insert 96
+Insert 51212
+Insert 154
+Insert 100006
+Insert 532
+Insert 10000000
+Extract
+Insert 87
+Insert 7604
+Insert 4322543
+Insert 9876
+Insert 200098
+Extract
+Insert 30987
+Insert 35476
+Insert 7954
+Extract
+Insert 5432564
+Extract
+Insert 12434
+Insert 9654
+Insert 51287
+Insert 187
+Insert 10000986
+Insert 5843
+Insert 1000000289
+Extract
+Insert 81
+Insert 760562
+Insert 43226
+Insert 98487
+Insert 200780
+Extract
+Insert 385
+Insert 354096
+Insert 79096
+Extract
+Insert 543256986
+Extract
+Insert 124642
+Insert 9435
+Insert 51280
+Insert 12456
+Insert 1000076
+Insert 5965
+Insert 1000000
+Extract
+Insert 8098
+Insert 760987
+Insert 4322790
+Insert 98987
+Insert 2007908
+Extract
+Insert 39870
+Insert 35476896
+Insert 79456
+Extract
+Insert 543256467
+Extract
+Insert 1243563
+Insert 93463
+Insert 51234
+Insert 1987
+Insert 10000097
+Insert 53453
+Insert 100000022
+Extract
+Insert 854
+Insert 76078
+Insert 43227987
+Insert 9889
+Insert 20098
+Extract
+Insert 3876
+Insert 35454
+Insert 79242
+Extract

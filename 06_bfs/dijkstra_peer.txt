@@ -1,0 +1,31 @@
+ANSWER: The shortest path between two nodes u and v that passes
+through v0 must be the shortest path from u to v0 and the shortest
+path from v0 to v. We can easily compute the latter using Dijkstra’s
+algorithm in O ((n + m) lg n) time. To compute the former, observe
+that we want to compute the shortest paths from every vertex to
+v0. This is exactly the opposite of the shortest path problem, so we
+can solve it easily by first reversing the graph and then running
+Dijkstra’s algorithm to compute the shortest paths from v0 to each
+vertex in GR. Reversing the graph takes linear time (as shown in the
+previous assignment) so this also takes O ((n + m) lg n) time. Storing
+all of the shortest path lengths would require O(n2) time and space,
+so we simply keep these two arrays of shortest paths. Using these we
+can answer a shortest path length query from u to v by adding the
+shortest path length from u to v0 (in the second array we created) and
+the shorteste path length from v0 to v (using the first array).
+
+Big-Oh: Rule of Sums
+if g1 = O(f1) and g2 = O(f2), then g1 + g2 = O(max(f1, f2))
+
+----------------------------------------------------------------------
+Кратчайший путь из некоторой вершины s в некоторую вершину t, который проходит через вершину $v_0$ можно представить как кратчайший путь из s в $v_0$, конкатенированный с путем из $v_0$ в t. 
+
+Последнюю составляющую такого пути можно найти с помощью алгоритма Дейкстры, причем для всех вершин сразу за один проход алгоритма. На это уйдет время O((|V| + |E|) log |V|).
+
+Чтобы найти первую составляющую кратчайшего пути, то есть s в $v_0$, надо вспомнить функцию транспонирования графа, которую мы использовали при поиске компонентов связности. Напомним, что эта функция строит на основе входного графа G граф $G^{T}$ такой, что в нем присутствуют те же вершины, но все ребра оригинального графа обращаются в противоположную сторону. Транспонирование графа занимает линейное время, то есть O(|V| + |E|).
+
+Полученный транспорированный граф $G^{T}$ идет на вход алгоритма Дейкстры, который снова отработает за время O((|V| + |E|) log |V|). Так мы найдем кратчайшие пути из любой вершины оригинального графа в $v_0$.
+
+Наконец, нам нужно для всех пар вершин найти кратчайшие расстояния, проходящие через $v_0$. Для этого мы для всех перестановок (пермутаций) уже за константное время будем находить сумму кратчайшего пути из s в $v_0$ и из $v_0$ в t. Количество пермутаций парами в графе из |V| вершин будет равно $|V| \cdot (|V| - 1)$, то есть примерно $|V|^2$.
+
+Таким образом, время работы алгоритма будет равно $O(|V|^2)$. Это следует из т.н. правила сумм для записей в О-символике: если $g_1 \in O(f_1)$ и $g_2 \in O(f_2)$, то $g_1 + g_2 = O(max(f_1, f_2)) \blacksquare$

@@ -1,0 +1,7 @@
+6
+Insert 100
+Insert 10
+Extract
+Insert 5
+Insert 50
+Extract

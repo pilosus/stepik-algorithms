@@ -1,0 +1,8 @@
+5 7
+Check 1 2
+Union 1 2
+Check 1 2
+Union 5 1
+Check 5 2
+Check 3 3
+Check 3 4
